@@ -91,14 +91,14 @@
   table.qt{width:100%;border-collapse:collapse;font-size:13px;}
   table.qt td{padding:7px 10px;border-bottom:1px solid var(--line);}
   table.qt tr td:first-child{color:var(--muted);}
-  table.qt tr td:nth-child(2),table.qt tr td:nth-child(3){font-family:"IBM Plex Mono",monospace;font-weight:600;text-align:right;}
+  table.qt tr td:nth-child(2),table.qt tr td:nth-child(3){font-family:"IBM Plex Mono",monospace;font-weight:600;text-align:right;white-space:nowrap;}
   table.qt tr td:nth-child(3){color:var(--accent);}
   table.qt tr td:nth-child(4){text-align:center;width:46px;}
   table.qt tr.head td{background:#f4f9fb;color:var(--ink)!important;font-weight:600;text-transform:uppercase;font-size:10px;letter-spacing:.7px;border-bottom:1px solid var(--line-strong);}
   table.qt tr.head td:nth-child(2),table.qt tr.head td:nth-child(3),table.qt tr.head td:nth-child(4){text-align:right;color:var(--ink)!important;}
   table.qt tr.head td:nth-child(4){text-align:center;}
   table.qt tr.grp td{background:#eef5f9;color:var(--accent-d)!important;font-weight:600;text-transform:uppercase;font-size:9.5px;letter-spacing:.8px;}
-  .badge{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;padding:2px 6px;border-radius:2px;letter-spacing:.5px;}
+  .badge{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;letter-spacing:.5px;margin-left:2px;}
   .badge.ok{background:var(--ok-bg);color:var(--ok);} .badge.ng{background:var(--ng-bg);color:var(--ng);}
 
   .crit{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--muted);border-top:1px dashed var(--line);margin-top:16px;padding-top:13px;}
@@ -218,27 +218,27 @@
         </div>
         <div class="figcap" id="figcap">—</div>
 
+        <div class="subhdr">Per train &amp; total (system)</div>
         <table class="qt">
-          <tr class="head"><td>Property</td><td>Per vessel</td><td>Total</td><td></td></tr>
-          <tr class="grp"><td colspan="4">Configuration</td></tr>
-          <tr><td>Trains (duty / standby / in svc)</td><td>—</td><td id="o_trains">—</td><td></td></tr>
-          <tr><td>Vessels per train</td><td id="o_vpt">—</td><td>—</td><td></td></tr>
-          <tr><td>Total vessels (installed)</td><td>—</td><td id="o_vtot">—</td><td></td></tr>
-          <tr class="grp"><td colspan="4">Quantities</td></tr>
-          <tr><td>Bed / filter area</td><td id="o_area">—</td><td id="o_areaT">—</td><td></td></tr>
-          <tr><td>Media volume</td><td id="o_mv">—</td><td id="o_mvT">—</td><td></td></tr>
-          <tr><td>Media mass</td><td id="o_mass">—</td><td id="o_massT">—</td><td></td></tr>
-          <tr><td>Bed volume</td><td id="o_bvgal">—</td><td id="o_bvT">—</td><td></td></tr>
-          <tr class="grp"><td colspan="4">Hydraulics &amp; contact</td></tr>
-          <tr><td>Flow per vessel</td><td id="o_qv">—</td><td id="o_qvT">—</td><td></td></tr>
-          <tr><td>HLR</td><td id="o_hlr">—</td><td>—</td><td><span id="b_hlr" class="badge"></span></td></tr>
-          <tr><td>EBCT per vessel</td><td id="o_ebctv">—</td><td>—</td><td><span id="b_ebct" class="badge"></span></td></tr>
-          <tr><td>EBCT per train</td><td id="o_ebctt">—</td><td>—</td><td></td></tr>
-          <tr class="grp"><td colspan="4">Bed &amp; freeboard</td></tr>
-          <tr><td>Settled bed depth (per vessel)</td><td id="o_depth">—</td><td>—</td><td></td></tr>
-          <tr><td>Effective bed depth (per train)</td><td id="o_depthT">—</td><td>—</td><td></td></tr>
-          <tr><td>Expanded bed depth (<span id="lbl_exp">25</span>% expansion)</td><td id="o_xdepth">—</td><td>—</td><td></td></tr>
-          <tr><td>Freeboard</td><td id="o_fb">—</td><td>—</td><td><span id="b_fb" class="badge"></span></td></tr>
+          <tr class="head"><td>Property</td><td>Per train</td><td>Total (system)</td></tr>
+          <tr><td>Vessels per train</td><td id="o_vpt">—</td><td>—</td></tr>
+          <tr><td>Vessels in service</td><td>—</td><td id="o_vsvc">—</td></tr>
+          <tr><td>Vessels installed</td><td>—</td><td id="o_vinst">—</td></tr>
+          <tr><td>Bed / filter area</td><td id="o_area">—</td><td id="o_areaT">—</td></tr>
+          <tr><td>Media mass</td><td id="o_masspt">—</td><td id="o_massT">—</td></tr>
+          <tr><td>Media volume</td><td id="o_mvpt">—</td><td id="o_mvT">—</td></tr>
+          <tr><td>Bed volume</td><td id="o_bvpt">—</td><td id="o_bvT">—</td></tr>
+          <tr><td>Flow per train</td><td id="o_qv">—</td><td id="o_qvT">—</td></tr>
+          <tr><td>HLR</td><td><span id="o_hlr">—</span> <span id="b_hlr" class="badge"></span></td><td>—</td></tr>
+          <tr><td>Freeboard</td><td><span id="o_fb">—</span> <span id="b_fb" class="badge"></span></td><td>—</td></tr>
+        </table>
+
+        <div class="subhdr" style="margin-top:16px;">Per vessel vs per train</div>
+        <table class="qt">
+          <tr class="head"><td>Property</td><td>Per vessel</td><td>Per train</td></tr>
+          <tr><td>Operational bed depth</td><td id="o_depthv">—</td><td id="o_depthpt">—</td></tr>
+          <tr><td>Expanded bed depth</td><td id="o_xdepthv">—</td><td id="o_xdepthpt">—</td></tr>
+          <tr><td>EBCT</td><td><span id="o_ebctv">—</span> <span id="b_ebct" class="badge"></span></td><td id="o_ebctpt">—</td></tr>
         </table>
 
         <div class="crit">
@@ -246,6 +246,7 @@
           <div class="citem">HLR <input id="c_hlr_lo" value="2"> – <input id="c_hlr_hi" value="10"> gpm/sf</div>
           <div class="citem">EBCT/vessel ≥ <input id="c_ebct" value="10"> min</div>
           <div class="citem">Bed expansion <input id="c_exp" value="25"> %</div>
+          <div class="citem">Min freeboard ≥ <input id="c_fbmin" value="1"> ft</div>
         </div>
 
         <div class="note">
@@ -272,9 +273,9 @@
   var DIAM={14:{mass:60000,ssh:18},12:{mass:40000,ssh:16},10:{mass:20000,ssh:12},8:{mass:10000,ssh:10},6:{mass:3500,ssh:8},4:{mass:1200,ssh:6}};
   var DEF={dia:12,swd:16,basis:"mass",mass:40000,dens:0.485,depth:5,exp:25,flow:null,unit:"mgd",trains:1,config:"leadlag",redun:1,inserv:"duty"};
   var SITES={
-    PIK:{dia:12,basis:"mass",mass:40000,dens:0.485,trains:44,flow:60,unit:"mgd",config:"single"},
-    NES:{dia:12,basis:"mass",mass:40000,dens:0.485,trains:12,flow:15,unit:"mgd",config:"leadlag"},
-    ALN:{dia:12,basis:"mass",mass:40000,dens:0.485,trains:3,flow:3,unit:"mgd",config:"leadlag"}
+    PIK:{dia:12,swd:16,basis:"mass",mass:40000,dens:0.485,depth:5,exp:25,flow:60,unit:"mgd",trains:44,config:"single",redun:2,inserv:"duty"},
+    NES:{dia:12,swd:16,basis:"mass",mass:40000,dens:0.485,depth:5,exp:25,flow:15,unit:"mgd",trains:11,config:"leadlag",redun:1,inserv:"duty"},
+    ALN:{dia:12,swd:16,basis:"mass",mass:40000,dens:0.485,depth:5,exp:25,flow:3,unit:"mgd",trains:3,config:"leadlag",redun:0,inserv:"duty"}
   };
   var saved={};
   function loadSaved(){ try{ var s=localStorage.getItem(KEY); if(s) saved=JSON.parse(s)||{}; }catch(e){ saved={}; } }
@@ -394,26 +395,23 @@
     var hlr=(qv>0&&area>0)?qv/area:0, ebctv=(qv>0&&bvgal>0)?bvgal/qv:0;
     var hlrLo=num($("c_hlr_lo").value), hlrHi=num($("c_hlr_hi").value), ebMin=num($("c_ebct").value);
 
-    $("lbl_exp").textContent=fmt(exppct,0);
-    // config
-    $("o_trains").textContent=N+" / "+R+" / "+inSvc;
-    $("o_vpt").textContent=vpt+(vpt===2?" (lead+lag)":" (single)");
-    $("o_vtot").textContent=fmt(totVessels,0);
-    // quantities
+    var fbmin=num($("c_fbmin").value);
+    // Table 1: per train | total system
+    $("o_vpt").textContent=vpt;
+    $("o_vsvc").textContent=fmt(inSvc*vpt,0);
+    $("o_vinst").textContent=fmt(totVessels,0);
     $("o_area").textContent=fmt(area,1)+" sf"; $("o_areaT").textContent=fmt(area*totTrains,0)+" sf";
-    $("o_mv").textContent=fmt(mvcf,0)+" cf"; $("o_mvT").textContent=fmt(mvcf*totVessels,0)+" cf";
-    $("o_mass").textContent=fmt(mass,0)+" lb"; $("o_massT").textContent=fmt(mass*totVessels,0)+" lb";
-    $("o_bvgal").textContent=fmt(bvgal,0)+" gal"; $("o_bvT").textContent=fmt(bvgal*totVessels,0)+" gal";
-    // hydraulics
+    $("o_masspt").textContent=fmt(mass*vpt,0)+" lb"; $("o_massT").textContent=fmt(mass*totVessels,0)+" lb";
+    $("o_mvpt").textContent=fmt(mvcf*vpt,0)+" cf"; $("o_mvT").textContent=fmt(mvcf*totVessels,0)+" cf";
+    $("o_bvpt").textContent=fmt(bvgal*vpt,0)+" gal"; $("o_bvT").textContent=fmt(bvgal*totVessels,0)+" gal";
     $("o_qv").textContent=qv>0?fmt(qv,0)+" gpm":"—"; $("o_qvT").textContent=hasFlow?fmt(gpm,0)+" gpm":"—";
     $("o_hlr").textContent=qv>0?fmt(hlr,2):"—"; if(qv>0) badge($("b_hlr"),hlr>=hlrLo&&hlr<=hlrHi); else clr($("b_hlr"));
+    var fbcell=$("o_fb"); fbcell.textContent=fmt(fb,2)+" ft"; fbcell.style.color=fb<fbmin?"var(--ng)":""; badge($("b_fb"),fb>=fbmin);
+    // Table 2: per vessel | per train
+    $("o_depthv").textContent=fmt(depth,2)+" ft"; $("o_depthpt").textContent=fmt(depth*vpt,2)+" ft";
+    $("o_xdepthv").textContent=fmt(xdepth,2)+" ft"; $("o_xdepthpt").textContent=fmt(xdepth*vpt,2)+" ft";
     $("o_ebctv").textContent=qv>0?fmt(ebctv,1)+" min":"—"; if(qv>0) badge($("b_ebct"),ebctv>=ebMin); else clr($("b_ebct"));
-    $("o_ebctt").textContent=qv>0?fmt(ebctv*vpt,1)+" min":"—";
-    // bed
-    $("o_depth").textContent=fmt(depth,2)+" ft"; $("o_depthT").textContent=fmt(depth*vpt,2)+" ft";
-    $("o_xdepth").textContent=fmt(xdepth,2)+" ft";
-    $("o_fb").textContent=fmt(fb,2)+" ft"; badge($("b_fb"),fb>=0);
-    var fbcell=$("o_fb"); fbcell.style.color=fb<0?"var(--ng)":"";
+    $("o_ebctpt").textContent=qv>0?fmt(ebctv*vpt,1)+" min":"—";
 
     $("figcap").textContent=(vpt===2?"Lead vessel shown · lag identical, in series":"Single-stage vessel");
     drawVessel(dia,swd,depth,xdepth);
